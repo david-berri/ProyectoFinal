@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "C:/Users/david/Documents/NetBeansProjects/proyectofinal/./frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/david/Documents/NetBeansProjects/proyectofinal/./frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/david/Documents/NetBeansProjects/proyectofinal/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\david\\Documents\\NetBeansProjects\\proyectofinal\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\david\\Documents\\NetBeansProjects\\proyectofinal\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/david/Documents/NetBeansProjects/proyectofinal/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/david/Documents/NetBeansProjects/proyectofinal/src/main/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/david/Documents/NetBeansProjects/proyectofinal/./frontend/generated/jar-resources",
+  "themeName": "",
+  "clientServiceWorkerSource": "C:\\Users\\david\\Documents\\NetBeansProjects\\proyectofinal\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
