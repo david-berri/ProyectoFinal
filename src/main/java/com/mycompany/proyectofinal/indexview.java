@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
@@ -18,23 +17,23 @@ import com.vaadin.flow.server.VaadinSession;
 public class indexview extends VerticalLayout {
 
     public indexview() {
-        // Establecer la imagen de fondo con opacidad
-        getElement().getStyle().set("background-image", "url('https://wallpapers.com/images/hd/medical-background-cjge7e89adg6ub8x.jpg')");
+        // Establecer la imagen de fondo
+        getElement().getStyle().set("background-image", "url('https://pbs.twimg.com/media/GcTXmpdXkAANLlB?format=jpg&name=large')");
         getElement().getStyle().set("background-size", "cover");
         getElement().getStyle().set("background-repeat", "no-repeat");
-        getElement().getStyle().set("opacity", "0.7"); // Establecer opacidad al 70%
-        
+        getElement().getStyle().set("height", "100vh"); // Altura completa de la vista
+
         setAlignItems(Alignment.CENTER);
-        setJustifyContentMode(JustifyContentMode.CENTER);
+        setJustifyContentMode(JustifyContentMode.START); // Mantener el modo de justificación en START
         setSizeFull(); // Asegurarse de que el layout ocupe toda la pantalla
 
-        // Agregar el logo desde una URL
-        Image logo = new Image("https://pbs.twimg.com/media/GcN19FTXYAA0Kkz?format=jpg&name=4096x4096", "Logo");
-        logo.setWidth("400px"); // Ajustar el tamaño del logo a 400px
+        // Crear un espacio vacío para empujar los componentes hacia abajo
+        Div spacer = new Div();
+        spacer.setHeight("250px"); // Aumentar la altura del espacio vacío
 
         // Crear componentes de inicio de sesión
         H1 titulo = new H1("Login");
-        
+
         // Crear campos de texto con estilo
         TextField usernameField = new TextField("Usuario");
         usernameField.getElement().getStyle().set("background-color", "rgba(255, 255, 255, 0.8)"); // Fondo blanco semi-transparente
@@ -58,7 +57,7 @@ public class indexview extends VerticalLayout {
         loginButton.addClickListener(event -> {
             String username = usernameField.getValue();
             String password = passwordField.getValue();
-            String userType = validateUser (username, password);
+            String userType = validateUser(username, password);
             if (userType != null) {
                 VaadinSession.getCurrent().setAttribute("username", username); // Almacenar el nombre de usuario en la sesión
                 messageDiv.setText("Bienvenido " + userType);
@@ -73,13 +72,12 @@ public class indexview extends VerticalLayout {
             }
         });
 
-        // Agregar componentes al layout
-        add(logo, titulo, usernameField, passwordField, loginButton, messageDiv);
+        // Agregar componentes al layout, incluyendo el espacio vacío para mover el login hacia abajo
+        add(spacer, titulo, usernameField, passwordField, loginButton, messageDiv);
     }
 
-    private String validateUser (String username, String password) {
+    private String validateUser(String username, String password) {
         // Lógica para validar el usuario contra el archivo usuarios.txt
-        // Retornar el tipo de usuario si es válido, o null si no lo es.
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/usuarios.txt")))) {
             String line;
             while ((line = reader.readLine()) != null) {
