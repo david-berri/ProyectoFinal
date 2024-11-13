@@ -1,0 +1,10 @@
+A1,Tipo A,Ocupada
+A2,Tipo A,Disponible
+A3,Tipo A,Disponible
+A4,Tipo A,Disponible
+A5,Tipo A,Disponible
+A6,Tipo A,Disponible
+A7,Tipo A,Disponible
+A8,Tipo A,Disponible
+A9,Tipo A,Disponible
+A10,Tipo A,Disponible

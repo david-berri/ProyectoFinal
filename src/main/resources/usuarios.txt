@@ -1,0 +1,4 @@
+usuario1,contraseña1,administrativo
+usuario2,contraseña2,médico
+usuario3,contraseña3,enfermera
+camilo,camilo,administrativo
